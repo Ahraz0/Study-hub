@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Animated gradient background */
+.home {
+  background-image: linear-gradient(-45deg, #240036a6, #5900ff8f, #000000a9, #5d00ffa8), url('assets/background.png');
+  background-size: 150% 150%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Typing effect */
+.typing {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+/* Button style */
+.intro-text button {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+  border: 1px solid #ffffff33;
+  transition: transform 0.3s ease;
+}
+.intro-text button:hover {
+  transform: scale(1.1);
+}
+
+/* Center intro text */
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* Header style with glass effect */
+header {
+  width: 90%;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  margin: auto;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+header a {
+  margin: 0 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: yellow;
+  font-size: 25px;
+  transition: color 0.3s ease;
+}
+header a:hover {
+  color: white;
+}
+
+header img {
+  width: 130px;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+
+/* Layout tweaks */
+.logo {
+  display: flex;
+  margin-left: 15%;
+}
+.pages {
+  display: flex;
+  margin-right: 15%;
+}
+
+/* Typing animation keyframes */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Gradient background animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive Nav Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu-toggle span {
+  background: yellow;
+  height: 4px;
+  width: 30px;
+  margin: 4px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .pages {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.411);
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .pages.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .typing {
+    font-size: 2rem;
+  }
+}
